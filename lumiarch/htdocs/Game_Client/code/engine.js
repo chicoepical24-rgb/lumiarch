@@ -9,6 +9,7 @@ import { initMobileControls } from './mobile.js';
 import { initMenu } from './menu.js';
 import { ScriptService } from './scripting.js'; 
 import { initAudio } from './sounds.js';
+import { initMultiplayer, updateRemotePlayers, sendPlayerMovement } from './multiplayer.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 5000); 
@@ -180,7 +181,10 @@ async function init() {
         window.addEventListener('mousedown', unlockAudio);
         window.addEventListener('keydown', unlockAudio);
 
-        // 2. Global Context Setup
+        // 2. Initialize Multiplayer
+        initMultiplayer(scene, camera, world);
+
+        // 3. Global Context Setup
         const workspace = parsedData.find(i => i.class === "Workspace");
         const lighting = parsedData.find(i => i.class === "Lighting");
 
@@ -203,17 +207,17 @@ async function init() {
             }
         }
 
-        // 3. Build World
+        // 4. Build World
         initMenu(renderer, scene, world);
         buildWorkspace(scene, parsedData, world);
         
         window.workspace = scene.getObjectByName("Workspace");
         
-        // Capture character data during player initialization
+        // 5. Capture character data during player initialization
         const characterData = await initPlayer(scene, world); 
         initMobileControls();
 
-        // 4. Initialize Scripts
+        // 6. Initialize Scripts
         const scriptService = new ScriptService(scene, world);
         scene.userData.scriptService = scriptService;
         
@@ -232,12 +236,25 @@ async function init() {
     }
 }
 
+let lastSendTime = 0;
+const SEND_INTERVAL = 50; // Send position updates every 50ms
+
 function animate() {
     requestAnimationFrame(animate);
     
     world.fixedStep();
     cleanupFallenParts(scene, world);
     updatePlayer(camera, world, scene); 
+    
+    // Send player movement to server every SEND_INTERVAL ms
+    const now = performance.now();
+    if (now - lastSendTime > SEND_INTERVAL) {
+        sendPlayerMovement(window.characterBody, camera);
+        lastSendTime = now;
+    }
+    
+    // Update remote players from server
+    updateRemotePlayers(scene);
     
     updateCelestialCycle();
     
