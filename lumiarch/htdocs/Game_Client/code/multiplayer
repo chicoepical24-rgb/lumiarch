@@ -1,0 +1,270 @@
+// multiplayer.js - Handles all Socket.io multiplayer synchronization
+import * as THREE from 'three';
+
+let socket = null;
+let remotePlayersData = new Map();
+let remotePlayerMeshes = new Map();
+let localPlayerId = null;
+let scene = null;
+let world = null;
+
+const PLAYER_MODEL_CACHE = new Map();
+
+// Simple player capsule model (head + body)
+function createPlayerModel() {
+    const group = new THREE.Group();
+    
+    // Head
+    const headGeo = new THREE.SphereGeometry(0.4, 16, 16);
+    const headMat = new THREE.MeshPhongMaterial({ color: 0xffdbac });
+    const head = new THREE.Mesh(headGeo, headMat);
+    head.position.y = 1.5;
+    head.castShadow = true;
+    group.add(head);
+    
+    // Body/Torso
+    const bodyGeo = new THREE.CylinderGeometry(0.3, 0.35, 1.2, 8);
+    const bodyMat = new THREE.MeshPhongMaterial({ color: 0x0066cc });
+    const body = new THREE.Mesh(bodyGeo, bodyMat);
+    body.position.y = 0.6;
+    body.castShadow = true;
+    group.add(body);
+    
+    // Left Arm
+    const armGeo = new THREE.CylinderGeometry(0.15, 0.15, 1, 8);
+    const armMat = new THREE.MeshPhongMaterial({ color: 0xffdbac });
+    const leftArm = new THREE.Mesh(armGeo, armMat);
+    leftArm.position.set(-0.6, 0.8, 0);
+    leftArm.castShadow = true;
+    group.add(leftArm);
+    
+    const rightArm = leftArm.clone();
+    rightArm.position.x = 0.6;
+    group.add(rightArm);
+    
+    // Left Leg
+    const legGeo = new THREE.CylinderGeometry(0.15, 0.15, 1, 8);
+    const legMat = new THREE.MeshPhongMaterial({ color: 0x333333 });
+    const leftLeg = new THREE.Mesh(legGeo, legMat);
+    leftLeg.position.set(-0.2, -0.5, 0);
+    leftLeg.castShadow = true;
+    group.add(leftLeg);
+    
+    const rightLeg = leftLeg.clone();
+    rightLeg.position.x = 0.2;
+    group.add(rightLeg);
+    
+    // Name tag
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 64;
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 48px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('Player', 128, 45);
+    
+    const texture = new THREE.CanvasTexture(canvas);
+    const spriteMat = new THREE.SpriteMaterial({ map: texture });
+    const nameTag = new THREE.Sprite(spriteMat);
+    nameTag.scale.set(2, 0.5, 1);
+    nameTag.position.y = 2.2;
+    group.add(nameTag);
+    
+    group.castShadow = true;
+    group.receiveShadow = true;
+    
+    return group;
+}
+
+export function initMultiplayer(sceneRef, camera, worldRef) {
+    scene = sceneRef;
+    world = worldRef;
+    
+    // Connect to Socket.io server
+    socket = io();
+    
+    // Connection successful
+    socket.on('connect', () => {
+        console.log(`[Multiplayer] Connected to server as ${socket.id}`);
+        localPlayerId = socket.id;
+        window.localPlayerId = socket.id;
+    });
+    
+    // Receive existing players when joining
+    socket.on('existing_players', (players) => {
+        console.log(`[Multiplayer] Found ${players.length} existing players`);
+        players.forEach(playerData => {
+            if (playerData.id !== socket.id) {
+                createRemotePlayer(playerData);
+            }
+        });
+    });
+    
+    // New player joined
+    socket.on('player_joined', (playerData) => {
+        console.log(`[Multiplayer] Player ${playerData.id} joined`);
+        createRemotePlayer(playerData);
+    });
+    
+    // Update remote player position
+    socket.on('player_moved', (data) => {
+        if (data.id === socket.id) return; // Ignore own movement
+        
+        remotePlayersData.set(data.id, {
+            id: data.id,
+            position: data.position,
+            rotation: data.rotation,
+            velocity: data.velocity
+        });
+    });
+    
+    // Handle player animations (optional)
+    socket.on('player_animated', (data) => {
+        const mesh = remotePlayerMeshes.get(data.id);
+        if (mesh) {
+            // Placeholder for animation handling
+            console.log(`[Animation] Player ${data.id} playing: ${data.animation}`);
+        }
+    });
+    
+    // Player died
+    socket.on('player_died', (data) => {
+        console.log(`[Multiplayer] Player ${data.id} died`);
+        const mesh = remotePlayerMeshes.get(data.id);
+        if (mesh) {
+            // Optional: show ragdoll effect or respawn animation
+        }
+    });
+    
+    // Player left
+    socket.on('player_left', (data) => {
+        console.log(`[Multiplayer] Player ${data.id} left`);
+        removeRemotePlayer(data.id);
+    });
+    
+    // Health changed
+    socket.on('player_health_changed', (data) => {
+        console.log(`[Multiplayer] Player ${data.id} health: ${data.health}`);
+    });
+    
+    // Connection lost
+    socket.on('disconnect', () => {
+        console.log('[Multiplayer] Disconnected from server');
+        remotePlayersData.clear();
+        remotePlayerMeshes.forEach(mesh => scene.remove(mesh));
+        remotePlayerMeshes.clear();
+    });
+    
+    // Heartbeat to keep connection alive
+    setInterval(() => {
+        if (socket && socket.connected) {
+            socket.emit('heartbeat');
+        }
+    }, 30000);
+}
+
+function createRemotePlayer(playerData) {
+    if (remotePlayerMeshes.has(playerData.id)) return;
+    
+    const playerModel = createPlayerModel();
+    playerModel.name = `RemotePlayer_${playerData.id}`;
+    
+    if (playerData.position) {
+        playerModel.position.set(
+            playerData.position.x,
+            playerData.position.y,
+            playerData.position.z
+        );
+    }
+    
+    scene.add(playerModel);
+    remotePlayerMeshes.set(playerData.id, playerModel);
+    remotePlayersData.set(playerData.id, playerData);
+}
+
+function removeRemotePlayer(playerId) {
+    const mesh = remotePlayerMeshes.get(playerId);
+    if (mesh) {
+        scene.remove(mesh);
+        remotePlayerMeshes.delete(playerId);
+    }
+    remotePlayersData.delete(playerId);
+}
+
+export function sendPlayerMovement(characterBody, camera) {
+    if (!socket || !socket.connected || !characterBody) return;
+    
+    socket.emit('player_move', {
+        position: {
+            x: characterBody.position.x,
+            y: characterBody.position.y,
+            z: characterBody.position.z
+        },
+        rotation: {
+            x: characterBody.quaternion.x,
+            y: characterBody.quaternion.y,
+            z: characterBody.quaternion.z,
+            w: characterBody.quaternion.w
+        },
+        velocity: {
+            x: characterBody.velocity.x,
+            y: characterBody.velocity.y,
+            z: characterBody.velocity.z
+        }
+    });
+}
+
+export function updateRemotePlayers(sceneRef) {
+    remotePlayersData.forEach((data, playerId) => {
+        const mesh = remotePlayerMeshes.get(playerId);
+        if (mesh) {
+            // Smooth interpolation between current position and target
+            const targetPos = new THREE.Vector3(
+                data.position.x,
+                data.position.y,
+                data.position.z
+            );
+            
+            mesh.position.lerp(targetPos, 0.15);
+            
+            // Update rotation
+            if (data.rotation) {
+                const targetQuat = new THREE.Quaternion(
+                    data.rotation.x,
+                    data.rotation.y,
+                    data.rotation.z,
+                    data.rotation.w
+                );
+                mesh.quaternion.slerp(targetQuat, 0.15);
+            }
+        }
+    });
+}
+
+// Send damage to server
+export function sendPlayerDamage(damage) {
+    if (socket && socket.connected) {
+        socket.emit('player_damage', { damage: damage });
+    }
+}
+
+// Send animation to other players
+export function sendPlayerAnimation(animationName, speed = 1.0) {
+    if (socket && socket.connected) {
+        socket.emit('player_animate', {
+            animation: animationName,
+            speed: speed
+        });
+    }
+}
+
+// Get remote player data (for debugging or gameplay logic)
+export function getRemotePlayers() {
+    return Array.from(remotePlayersData.values());
+}
+
+// Get specific remote player
+export function getRemotePlayer(playerId) {
+    return remotePlayersData.get(playerId);
+}

@@ -120,7 +120,11 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
   console.log(`
 ╔════════════════════════════════════════╗
+<<<<<<< HEAD
 ║   Lumiarch Server Running               ║
+=======
+║   Lumiarch Server Running              ║
+>>>>>>> 188d177c762f901ac4c6cbf77242d122286ffa49
 ║   Port: ${PORT}                               ║
 ║   Players Connected: 0                 ║
 ╚════════════════════════════════════════╝
