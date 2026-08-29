@@ -1,0 +1,144 @@
+<lumisle xml-version="4">
+    <Item class="Workspace">
+        <Properties>
+            <Name>Workspace</Name>
+            <UniqueHex>Workspace1</UniqueHex>
+            <Gravity>100</Gravity>
+            <FallenPartsDestroyHeight>-500</FallenPartsDestroyHeight>
+        </Properties>
+        <Item class="Part">
+            <Properties>
+                <Name>SpawnLocation</Name>
+                <UniqueHex>000000A1</UniqueHex>
+                <PartType>Brick</PartType> <Color3>0, 255, 0</Color3> <Material>Plastic</Material>
+                <Transparency>0</Transparency> 
+                <CastShadow>true</CastShadow>
+                <Position>0, 20, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>6, 1, 6</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>Stage1_Platform1</Name>
+                <UniqueHex>000000A2</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>0, 102, 255</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>0, 18, 12</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>6, 1, 6</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>Stage1_Platform2</Name>
+                <UniqueHex>000000A3</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>0, 102, 255</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>0, 18, 22</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>6, 1, 6</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>Stage2_Platform1</Name>
+                <UniqueHex>000000A4</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>255, 153, 0</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>8, 26, 22</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>5, 1, 5</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>Stage2_Platform2</Name>
+                <UniqueHex>000000A5</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>255, 153, 0</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>16, 30, 22</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>4, 1, 4</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>Stage3_Platform1</Name>
+                <UniqueHex>000000A6</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>255, 0, 0</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>16, 36, 12</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>4, 1, 4</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>Goal</Name>
+                <UniqueHex>000000A7</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>255, 255, 0</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>16, 42, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>8, 1, 8</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+    </Item>
+    <Item class="Lighting">
+        <Properties>
+            <Name>Lighting</Name>
+            <UniqueHex>Lighting1</UniqueHex>
+            <Brightness>1</Brightness>
+            <Ambient>255, 255, 255</Ambient>
+            <Timeofday>14</Timeofday>
+            <GlobalShadows>true</GlobalShadows>
+        </Properties>
+    </Item>
+</lumisle>

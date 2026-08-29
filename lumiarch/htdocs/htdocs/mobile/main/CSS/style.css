@@ -1,0 +1,256 @@
+@font-face {
+  font-family: comicsans;
+  src: url(comic.ttf);
+}
+
+@font-face {
+  font-family: arial;
+  src: url(arial.ttf);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: arial;
+  background-color: white;
+  position: fixed;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+}
+
+.content-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+  background-color: #FFF;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  background-image: url("https://lumisle.rf.gd/images/logo.png");
+  margin: 0;
+  width: 120px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  flex-shrink: 0; 
+}
+
+#topbar {
+  background: #1ea9bb; /* Color updated from 2nd script */
+  z-index: 9999; 
+  padding: 0 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+  flex-shrink: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  height: calc(40px + env(safe-area-inset-bottom));
+}
+
+.navigation-links {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.Options {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.menubutton {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-color: white; 
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    flex-shrink: 0;
+}
+
+a.menubutton:link,
+a.menubutton:visited,
+a.menubutton:hover,
+a.menubutton:active {
+  color: white;
+}
+
+.menutext {
+  font-size: 16px;
+  color: white;
+  white-space: nowrap;
+}
+
+#alertbanner {
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.sidebaricon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-color: black; 
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+.bigtext { font-size: 40px; text-align: center; }
+.description { font-size: 20px; text-align: center; }
+.playbtn { background-color: red; border: none; color: white; padding: 15px 32px; cursor: pointer; }
+a.normala { color: black; text-decoration: none; }
+
+#GameContainer {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.game-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.game-main-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* Left Column */
+.game-left-column {
+    flex: 1;
+}
+
+.game-thumbnail-frame {
+    width: 600px;
+    height: 360px;
+    border: 1px solid #ccc;
+}
+
+.game-bio-container {
+    margin-top: 15px;
+    padding: 10px 0;
+}
+
+.game-tabs {
+    margin-top: 20px;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab {
+    background: #e1e1e1;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.game-right-column {
+    width: 250px;
+}
+
+.creator-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.creator-avatar {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+}
+
+.play-button {
+    display: block;
+    width: 100%;
+    background: #008000;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.game-stats p {
+    margin: 5px 0;
+    font-size: 13px;
+    color: #333;
+}
+
+/* Re-added Script 2 elements that weren't in Script 1, without modifying original layout */
+.login-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    padding: 5px 30px;
+}
+
+.input-login {
+    border-radius: 0;
+    border: 1px solid #a0a0a0;
+    width: 98%;
+    height: 25px;
+    background-color: #e9e9e9;
+    font-size: 14px;
+    color: #a0a0a0;
+}
+
+.btn-login {
+    border-radius: 0;
+    border: 1px solid #868686;
+    width: 100%;
+    height: 25px;
+    background-color: #b8b8b8;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.blackmenutext {
+    font-size: 16px;
+    color: black;
+    white-space: nowrap;
+    text-decoration: none;
+}

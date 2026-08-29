@@ -1,0 +1,176 @@
+<lumisle xml-version="4">
+    <Item class="Workspace">
+        <Properties>
+			<Name>Workspace</Name>
+			<UniqueHex>Workspace1</UniqueHex>
+            <Gravity>100</Gravity>
+			<FallenPartsDestroyHeight>-500</FallenPartsDestroyHeight>
+        </Properties>
+        <Item class="Part" >
+            <Properties>
+				<Name>PartThing</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Brick</PartType> <!-- Brick, Sphere, Cylinder, Wedge, Cone -->
+				<Color3>0, 252, 251</Color3> <!-- RGB -->
+				<Material>Plastic</Material>
+				<Transparency>0</Transparency> 
+				<CastShadow>true</CastShadow>
+                <Position>0, 0, 0</Position>
+				<Orientation>0, 0, 0</Orientation>
+				<Size>4, 2, 1</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+				<Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Universal" back="Weld" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+		<Item class="Part" >
+            <Properties>
+				<Name>PartMeshMesh</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Brick</PartType> <!-- Brick, Sphere, Cylinder, Wedge, Cone -->
+				<Color3>0, 252, 251</Color3> <!-- RGB -->
+				<Material>Plastic</Material>
+				<Transparency>0</Transparency> 
+				<CastShadow>true</CastShadow>
+                <Position>0, 20, 0</Position>
+				<Orientation>0, 0, 0</Orientation>
+				<Size>4, 4, 4</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+				<Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Universal" back="Weld" right="Smooth" left="Smooth"/>
+            </Properties>
+			<Item class="SpecialMesh">
+				<Properties>
+					<Name>SpecialMeshSpecialMesh</Name>
+					<UniqueHex>N/A</UniqueHex>
+					<MeshPath>lumisle://meshes/head.obj</MeshPath>
+					<TexturePath></TexturePath>
+					<Size>1, 1, 1</Size>
+				</Properties>
+			</Item>
+			<Item class="Decal">
+				<Properties>
+					<Name>DecalTshing</Name>
+					<UniqueHex>N/A</UniqueHex>
+					<TexturePath>lumisle://textures/face.png</TexturePath>
+					<Transparency>0</Transparency>
+					<Side>front</Side>
+					<Color3>253, 252, 251</Color3> <!-- RGB -->
+					<CanTile>false</CanTile>
+					<ZIndex>1</ZIndex>
+					<StudsPerTile U="2" V="4"/>
+					<OffsetStuds U="2" V="4"/>
+				</Properties>
+			</Item>
+        </Item>
+		<Item class="Part" >
+            <Properties>
+				<Name>PartNotMesh</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Sphere</PartType> <!-- Brick, Sphere, Cylinder, Wedge, Cone -->
+				<Color3>0, 252, 251</Color3> <!-- RGB -->
+				<Material>Plastic</Material>
+				<Transparency>0</Transparency> 
+				<CastShadow>true</CastShadow>
+                <Position>0, 25, 0</Position>
+				<Orientation>0, 0, 0</Orientation>
+				<Size>4, 4, 4</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+				<Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Universal" back="Weld" right="Smooth" left="Smooth"/>
+            </Properties>
+			<Item class="Decal">
+				<Properties>
+					<Name>DecaslTshing</Name>
+					<UniqueHex>N/A</UniqueHex>
+					<TexturePath>lumisle://textures/face.png</TexturePath>
+					<Transparency>0</Transparency>
+					<Side>front</Side>
+					<Color3>253, 252, 251</Color3> <!-- RGB -->
+					<CanTile>false</CanTile>
+					<ZIndex>1</ZIndex>
+					<StudsPerTile U="2" V="4"/>
+					<OffsetStuds U="2" V="4"/>
+				</Properties>
+			</Item>
+        </Item>
+		<Item class="Part" >
+            <Properties>
+				<Name>PartNotMeshToo</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Cylinder</PartType> <!-- Brick, Sphere, Cylinder, Wedge, Cone -->
+				<Color3>0, 252, 251</Color3> <!-- RGB -->
+				<Material>Plastic</Material>
+				<Transparency>0</Transparency> 
+				<CastShadow>true</CastShadow>
+                <Position>0, 30, 0</Position>
+				<Orientation>0, 0, 0</Orientation>
+				<Size>4, 4, 4</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+				<Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Universal" back="Weld" right="Smooth" left="Smooth"/>
+            </Properties>
+			<Item class="Decal">
+				<Properties>
+					<Name>DecaslTshsaing</Name>
+					<UniqueHex>N/A</UniqueHex>
+					<TexturePath>lumisle://textures/face.png</TexturePath>
+					<Transparency>0</Transparency>
+					<Side>front</Side>
+					<Color3>253, 252, 251</Color3> <!-- RGB -->
+					<CanTile>false</CanTile>
+					<ZIndex>1</ZIndex>
+					<StudsPerTile U="2" V="4"/>
+					<OffsetStuds U="2" V="4"/>
+				</Properties>
+			</Item>
+        </Item>
+		<Item class="SpawnLocation">
+        <Properties>
+				<Name>StupidLocation</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Brick</PartType> <!-- Brick, Sphere, Cylinder, Wedge, Cone -->
+				<Color3>253, 0, 251</Color3> <!-- RGB -->
+				<Material>Plastic</Material>
+				<Transparency>0</Transparency> 
+				<CastShadow>true</CastShadow>
+                <Position>0, 10, 0</Position>
+				<Orientation>0, 0, 0</Orientation>
+				<Size>6, 1, 6</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+				<Locked>false</Locked>
+                <Surface top="Smooth" bottom="Inlets" front="Weld" back="Weld" right="Weld" left="Weld"/>
+            <FFDuration>10</FFDuration>
+			</Properties>
+			<Item class="Decal">
+				<Properties>
+					<Name>DecalThing</Name>
+					<UniqueHex>N/A</UniqueHex>
+					<TexturePath>lumisle://textures/SpawnLocation.png</TexturePath>
+					<Transparency>0</Transparency>
+					<Side>top</Side>
+					<Color3>253, 252, 251</Color3> <!-- RGB -->
+					<CanTile>false</CanTile>
+					<ZIndex>1</ZIndex>
+					<StudsPerTile U="2" V="4"/>
+					<OffsetStuds U="2" V="4"/>
+				</Properties>
+			</Item>
+		</Item>
+    </Item>
+    <Item class="Lighting">
+        <Properties>
+			<Name>Lighting</Name>
+			<UniqueHex>Lighting1</UniqueHex>
+            <Brightness>100</Brightness>
+            <Ambient>255, 255, 255</Ambient>
+			<Timeofday>14</Timeofday>
+			<GlobalShadows>true</GlobalShadows>
+        </Properties>
+    </Item>
+</lumisle>

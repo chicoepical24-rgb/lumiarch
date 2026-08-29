@@ -1,0 +1,100 @@
+<item class="Model">
+    <properties>
+        <name>CharacterModel</name>
+    </properties>
+    <item class="Humanoid">
+        <properties>
+            <name>Humanoid</name>
+            <health>100</health>
+            <maxhealth>100</maxhealth>
+            <walkspeed>16</walkspeed>
+            <jumppower>50</jumppower>
+            <hipheight>3.0</hipheight>
+            <state>0</state> 
+        </properties>
+    </item>
+    <item class="Part">
+        <properties>
+            <name>Torso</name>
+            <unique-id>SPECIAL_000000A1</unique-id>
+            <partType>Brick</partType>
+            <position>0, 23, 0</position>
+            <rotation>0, 0, 0</rotation>
+            <size>2, 2, 1</size>
+            <color>13, 105, 172</color>
+            <cancollide>true</cancollide>
+            <anchored>false</anchored>
+            <surface top="Studs" bottom="Inlets" left="Weld" right="Weld" front="Smooth" back="Smooth"/>
+        </properties>
+    </item>
+    <item class="Part">
+        <properties>
+            <name>Head</name>
+            <unique-id>SPECIAL_000000A2</unique-id>
+            <partType>Brick</partType>
+            <position>0, 24.5, 0</position>
+            <rotation>0, 0, 0</rotation>
+            <size>1.1, 1.1, 1.1</size>
+            <color>245, 205, 48</color>
+            <cancollide>true</cancollide>
+            <anchored>false</anchored>
+            <surface top="Smooth" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+        </properties>
+    </item>
+    <item class="Part">
+        <properties>
+            <name>LeftArm</name>
+            <unique-id>SPECIAL_000000A3</unique-id>
+            <partType>Brick</partType>
+            <position>-1.5, 23, 0</position>
+            <rotation>0, 0, 0</rotation>
+            <size>1, 2, 1</size>
+            <color>245, 205, 48</color>
+            <cancollide>true</cancollide>
+            <anchored>false</anchored>
+            <surface top="Studs" bottom="Inlets" right="Weld" left="Smooth" front="Smooth" back="Smooth"/>
+        </properties>
+    </item>
+    <item class="Part">
+        <properties>
+            <name>RightArm</name>
+            <unique-id>SPECIAL_000000A4</unique-id>
+            <partType>Brick</partType>
+            <position>1.5, 23, 0</position>
+            <rotation>0, 0, 0</rotation>
+            <size>1, 2, 1</size>
+            <color>245, 205, 48</color>
+            <cancollide>true</cancollide>
+            <anchored>false</anchored>
+            <surface top="Studs" bottom="Inlets" left="Weld" right="Smooth" front="Smooth" back="Smooth"/>
+        </properties>
+    </item>
+    <item class="Part">
+        <properties>
+            <name>LeftLeg</name>
+            <unique-id>SPECIAL_000000A5</unique-id>
+            <partType>Brick</partType>
+            <position>-0.5, 21, 0</position>
+            <rotation>0, 0, 0</rotation>
+            <size>1, 2, 1</size>
+            <color>153, 204, 0</color>
+            <cancollide>true</cancollide>
+            <anchored>false</anchored>
+            <surface top="Studs" bottom="Smooth" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+        </properties>
+    </item>
+    <item class="Part">
+        <properties>
+            <name>RightLeg</name>
+            <unique-id>SPECIAL_000000A6</unique-id>
+            <partType>Brick</partType>
+            <position>0.5, 21, 0</position>
+            <rotation>0, 0, 0</rotation>
+            <size>1, 2, 1</size>
+            <color>153, 204, 0</color>
+            <cancollide>true</cancollide>
+            <anchored>false</anchored>
+            <surface top="Studs" bottom="Smooth" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+        </properties>
+    </item>
+</item>

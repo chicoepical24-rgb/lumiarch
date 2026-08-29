@@ -1,0 +1,105 @@
+<galaxia-game>
+    <workspace>
+        <config>
+            <gravity val="-120"/>
+        </config>
+        
+        <!-- Floor -->
+        <object mass="0">
+            <config id="0001" name="Platform" parttype="brick" anchored="true" cancollide="true">
+                <position x="0" y="-0.5" z="0"/>
+                <size x="30" y="1" z="30"/>
+                <rotation x="0" y="0" z="0"/>
+                <brickcolor>0x1a2b3c</brickcolor>
+                <surface topsurface="Smooth" bottomsurface="Inlets" frontsurface="Smooth" backsurface="Smooth" rightsurface="Smooth" leftsurface="Smooth"/>
+            </config>
+        </object>
+        
+        <!-- Some base plates for stability -->
+        <object mass="0">
+            <config id="0002" name="BasePlate1" parttype="brick" anchored="true" cancollide="true">
+                <position x="0" y="0.5" z="0"/>
+                <size x="12" y="1" z="12"/>
+                <rotation x="0" y="0" z="0"/>
+                <brickcolor>0x4a6fa5</brickcolor>
+            </config>
+        </object>
+        
+        <!-- The wobbly tower itself -->
+        <object mass="1">
+            <config id="1001" name="Block1" parttype="brick" anchored="false" cancollide="true">
+                <position x="0" y="2" z="0"/>
+                <size x="8" y="1.2" z="3"/>
+                <rotation x="0" y="0" z="0"/>
+                <brickcolor>0xe74c3c</brickcolor>
+                <surface topsurface="Studs" bottomsurface="Inlets"/>
+            </config>
+        </object>
+        
+        <object mass="1">
+            <config id="1002" name="Block2" parttype="brick" anchored="false" cancollide="true">
+                <position x="0" y="3.3" z="1.8"/>
+                <size x="3" y="1.2" z="8"/>
+                <rotation x="0" y="0" z="0"/>
+                <brickcolor>0xf1c40f</brickcolor>
+                <surface topsurface="Studs" bottomsurface="Inlets"/>
+            </config>
+        </object>
+        
+        <object mass="1">
+            <config id="1003" name="Block3" parttype="brick" anchored="false" cancollide="true">
+                <position x="1.9" y="4.6" z="0"/>
+                <size x="8" y="1.2" z="3"/>
+                <rotation x="0" y="0" z="0"/>
+                <brickcolor>0x2ecc71</brickcolor>
+                <surface topsurface="Studs" bottomsurface="Inlets"/>
+            </config>
+        </object>
+        
+        <object mass="1">
+            <config id="1004" name="Block4" parttype="brick" anchored="false" cancollide="true">
+                <position x="0" y="5.9" z="-1.7"/>
+                <size x="3" y="1.2" z="8"/>
+                <rotation x="0" y="0" z="0"/>
+                <brickcolor>0x3498db</brickcolor>
+                <surface topsurface="Studs" bottomsurface="Inlets"/>
+            </config>
+        </object>
+        
+        <!-- The dangerous top block (extra light + high position) -->
+        <object mass="0.6">
+            <config id="9999" name="DangerBlock" parttype="brick" anchored="false" cancollide="true">
+                <position x="0.4" y="10.2" z="0.3"/>
+                <size x="4" y="1.2" z="4"/>
+                <rotation x="0" y="0" z="0"/>
+                <brickcolor>0x8e44ad</brickcolor>
+                <surface topsurface="Studs" bottomsurface="Inlets"/>
+            </config>
+        </object>
+        
+        <!-- Small decorative/spinning thing on top (very light) -->
+        <object mass="0.08">
+            <config id="6666" name="Spinner" parttype="cylinder" anchored="false" cancollide="true">
+                <position x="0" y="12" z="0"/>
+                <size x="1.4" y="3" z="1.4"/>
+                <rotation x="0" y="0" z="0"/>
+                <brickcolor>0xff3366</brickcolor>
+                <rotation x="0" y="0" z="90"/>
+            </config>
+        </object>
+        
+    </workspace>
+    
+    <lighting>
+        <config>
+            <brightness val="1.1"/>
+            <color val="#f0f4ff"/>
+            <ambient val="#404060"/>
+        </config>
+    </lighting>
+    
+    <sky>
+        <config type="skybox" preset="sunset"/>
+    </sky>
+    
+</galaxia-game>

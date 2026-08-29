@@ -1,0 +1,73 @@
+<item className="Model" name="CharacterModel">
+  <item className="Part" name="Torso">
+    <properties>
+      <partType>Brick</partType>
+      <position X="0" Y="23" Z="0"/>
+      <size X="2" Y="2" Z="1"/>
+      <brickcolor>#0d69ac</brickcolor>
+      <cancollide>true</cancollide>
+      <anchored>false</anchored>
+      <surface topsurface="Studs" bottomsurface="Inlets" leftsurface="Weld" rightsurface="Weld" frontsurface="Smooth" backsurface="Smooth"/>
+    </properties>
+  </item>
+
+  <item className="Part" name="Head">
+    <properties>
+      <partType>Brick</partType>
+      <position X="0" Y="24.5" Z="0"/>
+      <size X="2" Y="1" Z="1"/>
+      <brickcolor>#f5cd30</brickcolor>
+      <cancollide>true</cancollide>
+      <anchored>false</anchored>
+      <surface topsurface="Smooth" bottomsurface="Inlets" frontsurface="Smooth" backsurface="Smooth" rightsurface="Smooth" leftsurface="Smooth"/>
+    </properties>
+  </item>
+
+  <item className="Part" name="LeftArm">
+    <properties>
+      <partType>Brick</partType>
+      <position X="-1.5" Y="23" Z="0"/>
+      <size X="1" Y="2" Z="1"/>
+      <brickcolor>#f5cd30</brickcolor>
+      <cancollide>true</cancollide>
+      <anchored>false</anchored>
+      <surface topsurface="Studs" bottomsurface="Inlets" rightsurface="Weld" leftsurface="Smooth" frontsurface="Smooth" backsurface="Smooth"/>
+    </properties>
+  </item>
+
+  <item className="Part" name="RightArm">
+    <properties>
+      <partType>Brick</partType>
+      <position X="1.5" Y="23" Z="0"/>
+      <size X="1" Y="2" Z="1"/>
+      <brickcolor>#f5cd30</brickcolor>
+      <cancollide>true</cancollide>
+      <anchored>false</anchored>
+      <surface topsurface="Studs" bottomsurface="Inlets" leftsurface="Weld" rightsurface="Smooth" frontsurface="Smooth" backsurface="Smooth"/>
+    </properties>
+  </item>
+
+  <item className="Part" name="LeftLeg">
+    <properties>
+      <partType>Brick</partType>
+      <position X="-0.5" Y="21" Z="0"/>
+      <size X="1" Y="2" Z="1"/>
+      <brickcolor>#99cc00</brickcolor>
+      <cancollide>true</cancollide>
+      <anchored>false</anchored>
+      <surface topsurface="Weld" bottomsurface="Inlets" frontsurface="Smooth" backsurface="Smooth" rightsurface="Smooth" leftsurface="Smooth"/>
+    </properties>
+  </item>
+
+  <item className="Part" name="RightLeg">
+    <properties>
+      <partType>Brick</partType>
+      <position X="0.5" Y="21" Z="0"/>
+      <size X="1" Y="2" Z="1"/>
+      <brickcolor>#99cc00</brickcolor>
+      <cancollide>true</cancollide>
+      <anchored>false</anchored>
+      <surface topsurface="Weld" bottomsurface="Inlets" frontsurface="Smooth" backsurface="Smooth" rightsurface="Smooth" leftsurface="Smooth"/>
+    </properties>
+  </item>
+</item>

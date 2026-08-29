@@ -1,0 +1,22 @@
+Options -Indexes
+DirectoryIndex index.php index.html index.htm index2.html
+
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* /mobile/Error [L]
+
+ErrorDocument 403 /mobile/Error?code=403
+ErrorDocument 404 /mobile/Error?code=404
+ErrorDocument 500 /mobile/Error?code=500

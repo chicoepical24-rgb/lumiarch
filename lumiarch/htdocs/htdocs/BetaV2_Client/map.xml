@@ -1,0 +1,27 @@
+<lumisle xml-version="3">
+    <item class="Workspace">
+        <properties>
+            <gravity>100</gravity>
+        </properties>
+        <item class="Part" >
+            <properties>
+				<name>SpawnLocation</name>
+                <unique-id>000000A1</unique-id>
+                <partType>Brick</partType>
+                <position>0, 0, 0</position>
+				<rotation>0, 0, 0</rotation>
+				<size>4, 2, 1</size> 
+                <color>0, 255, 0</color>
+                <cancollide>true</cancollide>
+                <anchored>true</anchored>
+                <surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </properties>
+        </item>
+    </item>
+    <item class="Lighting">
+        <properties>
+            <brightness>100</brightness>
+            <ambient>255, 255, 255</ambient>
+        </properties>
+    </item>
+</lumisle>

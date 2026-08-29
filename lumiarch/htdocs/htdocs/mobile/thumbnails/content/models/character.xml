@@ -1,0 +1,146 @@
+<Item class="Model">
+        <Properties>
+            <Name>CharacterModel</Name>
+            <UniqueHex>N/A</UniqueHex>
+        </Properties>
+        <Item class="Humanoid">
+            <Properties>
+                <Name>Humanoid</Name>
+                <Health>100</Health>
+                <MaxHealth>100</MaxHealth>
+                <WalkSpeed>16</WalkSpeed>
+                <JumpPower>50</JumpPower>
+                <HipHeight>3.0</HipHeight>
+                <State>0</State> 
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>Torso</Name>
+                <UniqueHex>SPECIAL_000000A1</UniqueHex>
+                <PartType>Brick</PartType> <Color3>13, 105, 172</Color3> <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>0, 23, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>2, 2, 1</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>false</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" left="Weld" right="Weld" front="Smooth" back="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>Head</Name>
+                <UniqueHex>SPECIAL_000000A2</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>245, 205, 48</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>false</CastShadow>
+                <Position>0, 24.5, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>1, 1, 1</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>false</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Smooth" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+            <Item class="SpecialMesh">
+				<Properties>
+					<Name>head</Name>
+					<UniqueHex>N/A</UniqueHex>
+					<MeshPath>lumisle://meshes/head.obj</MeshPath>
+					<TexturePath></TexturePath>
+					<Size>1.25, 1.25, 1.25</Size>
+				</Properties>
+			</Item>
+			<Item class="Decal">
+				<Properties>
+					<Name>face</Name>
+					<UniqueHex>N/A</UniqueHex>
+					<TexturePath>lumisle://textures/face.png</TexturePath>
+					<Transparency>0</Transparency>
+					<Side>front</Side>
+					<Color3>253, 252, 251</Color3> <!-- RGB -->
+					<CanTile>false</CanTile>
+					<ZIndex>1</ZIndex>
+					<StudsPerTile U="2" V="4"/>
+					<OffsetStuds U="2" V="4"/>
+				</Properties>
+			</Item>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>LeftArm</Name>
+                <UniqueHex>SPECIAL_000000A3</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>245, 205, 48</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>-1.5, 23, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>1, 2, 1</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>false</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" right="Weld" left="Smooth" front="Smooth" back="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>RightArm</Name>
+                <UniqueHex>SPECIAL_000000A4</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>245, 205, 48</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>1.5, 23, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>1, 2, 1</Size>
+                <Cancollide>true</Cancollide>
+                <Anchored>false</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" left="Weld" right="Smooth" front="Smooth" back="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>LeftLeg</Name>
+                <UniqueHex>SPECIAL_000000A5</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>153, 204, 0</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>-0.5, 21, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>1, 2, 1</Size>
+                <Cancollide>false</Cancollide>
+                <Anchored>false</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Smooth" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Name>RightLeg</Name>
+                <UniqueHex>SPECIAL_000000A6</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>153, 204, 0</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency>
+                <CastShadow>true</CastShadow>
+                <Position>0.5, 21, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>1, 2, 1</Size>
+                <Cancollide>false</Cancollide>
+                <Anchored>false</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Smooth" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+    </Item>

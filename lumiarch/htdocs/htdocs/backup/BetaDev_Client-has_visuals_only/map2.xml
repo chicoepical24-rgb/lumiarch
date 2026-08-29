@@ -1,0 +1,148 @@
+<lumisle xml-version="4">
+    <Item class="Workspace">
+        <Properties>
+            <Name>Workspace</Name>
+            <UniqueHex>Workspace1</UniqueHex>
+            <Gravity>100</Gravity>
+            <FallenPartsDestroyHeight>-500</FallenPartsDestroyHeight>
+        </Properties>
+        <Item class="Part">
+            <Properties>
+                <Parent>Workspace1</Parent>
+                <Name>PartThing</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>0, 252, 251</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency> 
+                <CastShadow>true</CastShadow>
+                <Position>0, 0, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>4, 2, 1</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Universal" back="Weld" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="SpawnLocation">
+            <Properties>
+                <Parent>Workspace1</Parent>
+                <Name>StupidLocation</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>253, 0, 251</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency> 
+                <CastShadow>true</CastShadow>
+                <Position>0, 10, 0</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>6, 1, 6</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Smooth" bottom="Inlets" front="Weld" back="Weld" right="Weld" left="Weld"/>
+                <FFDuration>10</FFDuration>
+            </Properties>
+            <Item class="Decal">
+                <Properties>
+                    <Parent>Workspace1</Parent>
+                    <Name>DecalThing</Name>
+                    <UniqueHex>N/A</UniqueHex>
+                    <TexturePath>lumisle://textures/SpawnLocation.png</TexturePath>
+                    <Transparency>0</Transparency>
+                    <Color3>253, 252, 251</Color3>
+                    <CanTile>false</CanTile>
+                    <StudsPerTile U="2" V="4"/>
+                    <OffsetStuds U="2" V="4"/>
+                </Properties>
+            </Item>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Parent>Workspace1</Parent>
+                <Name>ObbyStep1</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>0, 252, 251</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency> 
+                <CastShadow>true</CastShadow>
+                <Position>0, 10, 12</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>4, 1, 4</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Parent>Workspace1</Parent>
+                <Name>ObbyStep2</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>0, 252, 251</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency> 
+                <CastShadow>true</CastShadow>
+                <Position>6, 12, 20</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>4, 1, 4</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Parent>Workspace1</Parent>
+                <Name>BalanceBeam</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>255, 255, 255</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency> 
+                <CastShadow>true</CastShadow>
+                <Position>6, 12, 35</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>1, 1, 20</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Smooth" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+        <Item class="Part">
+            <Properties>
+                <Parent>Workspace1</Parent>
+                <Name>WinnerPodium</Name>
+                <UniqueHex>N/A</UniqueHex>
+                <PartType>Brick</PartType>
+                <Color3>0, 255, 0</Color3>
+                <Material>Plastic</Material>
+                <Transparency>0</Transparency> 
+                <CastShadow>true</CastShadow>
+                <Position>6, 15, 50</Position>
+                <Orientation>0, 0, 0</Orientation>
+                <Size>10, 1, 10</Size> 
+                <Cancollide>true</Cancollide>
+                <Anchored>true</Anchored>
+                <Locked>false</Locked>
+                <Surface top="Studs" bottom="Inlets" front="Smooth" back="Smooth" right="Smooth" left="Smooth"/>
+            </Properties>
+        </Item>
+    </Item>
+    <Item class="Lighting">
+        <Properties>
+            <Name>Lighting</Name>
+            <UniqueHex>Lighting1</UniqueHex>
+            <Brightness>100</Brightness>
+            <Ambient>255, 255, 255</Ambient>
+            <Timeofday>14</Timeofday>
+            <GlobalShadows>true</GlobalShadows>
+        </Properties>
+    </Item>
+</lumisle>

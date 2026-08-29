@@ -1,0 +1,30 @@
+<galaxia-game>
+<workspace>
+    <config>
+        <gravity val="-100"/>
+    </config>
+    <object mass="0">
+        <config id="0001" name="Baseplate" parttype="brick" anchored="true" cancollide="true">
+            <position x="0" y="-0.5" z="0"/>
+            <size x="20" y="1" z="20"/>
+            <brickcolor>0x333333</brickcolor>
+            <surface topsurface="Studs" bottomsurface="Inlets" frontsurface="Smooth" backsurface="Weld" rightsurface="Smooth" leftsurface="Smooth"/>
+        </config>
+    </object>
+    
+    <object mass="1">
+        <config id="0002" name="LegoBrick" parttype="brick" anchored="false" cancollide="true">
+            <position x="0" y="10" z="0"/>
+            <size x="2" y="1" z="4"/>
+            <brickcolor>0xff0000</brickcolor>
+            <surface topsurface="Studs" bottomsurface="Inlets" frontsurface="Weld" backsurface="Smooth" rightsurface="Smooth" leftsurface="Smooth"/>
+        </config>
+    </object>
+</workspace>
+<lighting>
+    <config>
+        <brightness val="1"/>
+        <color val="#ffffff"/>
+    </config>
+</lighting>
+    </galaxia-game>

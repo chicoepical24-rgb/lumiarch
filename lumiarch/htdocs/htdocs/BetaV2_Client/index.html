@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lumisle Engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0">
+    <style>
+        body { margin: 0; overflow: hidden; background: #000; touch-action: none; }
+        #viewport { width: 100vw; height: 100vh; position: relative; }
+        #coords { position: absolute; top: 10px; left: 10px; color: #0f0; font-family: monospace; z-index: 10; pointer-events: none; }
+        
+        #exit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            z-index: 20;
+        }
+
+        #orientation-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: #fff;
+            z-index: 9999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        @media screen and (orientation: portrait) {
+            #orientation-overlay {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="orientation-overlay">
+        <div style="font-size: 50px;"></div>
+        <h2>Please Rotate to Landscape</h2>
+        <p>LUMISLE is recommended on a landscape</p>
+    </div>
+
+    <a href="../Home" id="exit-button">Exit</a>
+    <div id="coords">X: 0 | Y: 0 | Z: 0</div>
+    <div id="viewport"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cannon.js/0.6.2/cannon.min.js"></script>
+
+    <script src="code/camera.js"></script>
+    <script src="code/engine.js"></script>
+    <script src="code/builder.js"></script>
+    <script src="code/importer.js"></script>
+    <script src="code/parser.js"></script>
+    
+    <script src="code/loadmap.js"></script>
+    <script src="code/player.js"></script>
+    <script src="code/mobile.js"></script>
+
+<script>
+    window.onload = () => {
+        initEngine();
+        if (typeof spawnPlayer === "function") {
+            spawnPlayer();
+        }
+    };
+</script>
+</body>
+</html>

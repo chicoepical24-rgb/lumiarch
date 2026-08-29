@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/",
+    "cannon-es": "https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/dist/cannon-es.js"
+  }
+}
+</script>
+    
+    <title>Galaxia Studio</title>
+     <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="top-bar">
+        <div id="tab-bar">
+            <div class="tab" id="file-tab">File</div>
+            <div class="tab active">Home</div>
+            <div class="tab">Insert</div>
+            <div class="tab">Test</div>
+            <div class="tab">View</div>
+        </div>
+        <div id="ribbon">
+            <div class="ribbon-group">
+                <div class="icon-row">
+                    <div class="btn" id="select-btn"><div class="btn-img"></div><div class="btn-text">Select</div></div>
+                    <div class="btn" id="move-btn"><div class="btn-img"></div><div class="btn-text">Move</div></div>
+                    <div class="btn" id="scale-btn"><div class="btn-img"></div><div class="btn-text">Scale</div></div>
+                    <div class="btn" id="rotate-btn"><div class="btn-img"></div><div class="btn-text">Rotate</div></div>
+                </div>
+                <div class="ribbon-group-label">Tools</div>
+            </div>
+            <div class="ribbon-group">
+                <div class="icon-row">
+                    <div class="btn" id="part-btn" style="position: relative;">
+                        <div class="btn-img"></div>
+                        <div class="btn-text">Part</div>
+                        <div style="position: absolute; bottom: 2px; right: 2px; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid #888;"></div>
+                    </div>
+                    <div class="btn" id="color-btn"><div class="btn-img"></div><div class="btn-text">Color</div></div>
+                    <div class="btn" id="group-btn"><div class="btn-img"></div><div class="btn-text">Group</div></div>
+                </div>
+                <div class="ribbon-group-label">Parts</div>
+            </div>
+            <div class="ribbon-group">
+                <div class="icon-row">
+                    <div class="btn" id="play-btn"><div class="btn-img"></div><div class="btn-text">Play</div></div>
+                </div>
+                <div class="ribbon-group-label">Simulation</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-container">
+        <div id="left-sidebar"><h3>Toolbox</h3></div>
+        <div id="viewport-container">
+            <div id="viewport"></div>
+            <div id="bottom-panel">
+                <h3>Console</h3>
+                <div id="console-output">Studio ribbon UI initialized.</div>
+            </div>
+        </div>
+        <div id="right-sidebar">
+            <div id="explorer"><h3>Explorer</h3><div id="hierarchy"></div></div>
+            <div id="properties"><h3>Properties</h3><div id="prop-list">Select a part...</div></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="libs/cannon-es.umd.js"></script>
+    
+    <script src="cameraControl.js"></script>
+    <script src="main.js"></script>
+    <script type="module" src="editor.js">
+	</script>
+</body>
+</html>

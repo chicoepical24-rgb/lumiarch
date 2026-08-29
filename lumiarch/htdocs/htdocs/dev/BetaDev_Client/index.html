@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumisle Engine</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #000; font-family: sans-serif; }
+        canvas { display: block; }
+
+        /* Exit Button Styling */
+        #exit-button {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            padding: 10px 20px;
+            background: rgba(255, 50, 50, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 1000; 
+            transition: background 0.2s;
+        }
+
+        #exit-button:hover {
+            background: rgba(255, 0, 0, 1);
+        }
+    </style>
+</head>
+<body>
+    <button id="exit-button" onclick="window.location.href='../index.php'">EXIT</button>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/examples/jsm/loaders/OBJLoader.js": "https://unpkg.com/three@0.160.0/examples/jsm/loaders/OBJLoader.js",
+            "three/examples/jsm/geometries/DecalGeometry.js": "https://unpkg.com/three@0.160.0/examples/jsm/geometries/DecalGeometry.js",
+            "cannon-es": "https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js"
+        }
+    }
+    </script>
+    <script type="module" src="code/engine.js"></script>
+</body>
+</html>

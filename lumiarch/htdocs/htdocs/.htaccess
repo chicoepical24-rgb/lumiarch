@@ -1,0 +1,26 @@
+Options -Indexes
+DirectoryIndex index.php index.html index.htm index2.html
+
+RewriteEngine On
+
+# 1. Force HTTPS immediately
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Direct access to existing files/dirs
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# 3. Extensionless URLs
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# 4. Fallback for non-existent content
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* /Error [L]
+
+ErrorDocument 403 /Error?code=403
+ErrorDocument 404 /Error?code=404
+ErrorDocument 500 /Error?code=500
