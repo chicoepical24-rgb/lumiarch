@@ -1,0 +1,27 @@
+{
+  "name": "lumiarch-server",
+  "version": "1.0.0",
+  "description": "Multiplayer Roblox Clone - Lumiarch",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "roblox",
+    "game",
+    "multiplayer",
+    "three.js",
+    "cannon.js"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.5.4",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
